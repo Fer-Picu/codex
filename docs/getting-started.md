@@ -59,6 +59,29 @@ Below are a few bite-size examples you can copy-paste. Replace the text in quote
 | 6   | `codex "Carefully review this repo, and propose 3 high impact well-scoped PRs"` | Suggests impactful PRs in the current codebase.                            |
 | 7   | `codex "Look for vulnerabilities and create a security review report"`          | Finds and explains security bugs.                                          |
 
+### Creating a branch and pushing changes
+
+When you are ready to share Codex-generated edits, create a topic branch and push it to your remote. The example below starts from `main`, creates a new branch, commits some work, and publishes it so collaborators can pick it up:
+
+```shell
+# Confirm you are starting from an up-to-date default branch
+git checkout main
+git pull origin main
+
+# Create and switch to a dedicated feature branch
+git checkout -b feature/informe-nuevo
+
+# Make your edits, then stage and commit them
+git status        # optional: review staged vs unstaged files
+git add docs/getting-started.md
+git commit -m "Describe el flujo para crear y pushear una rama"
+
+# Push the branch so others can work from it
+git push -u origin feature/informe-nuevo
+```
+
+After running the last command, the remote branch `feature/informe-nuevo` will exist on your Git provider. You (or a teammate) can now open a pull request from that branch or continue collaborating by fetching and checking it out.
+
 ### Memory with AGENTS.md
 
 You can give Codex extra instructions and guidance using `AGENTS.md` files. Codex looks for `AGENTS.md` files in the following places, and merges them top-down:
