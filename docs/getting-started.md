@@ -59,6 +59,32 @@ Below are a few bite-size examples you can copy-paste. Replace the text in quote
 | 6   | `codex "Carefully review this repo, and propose 3 high impact well-scoped PRs"` | Suggests impactful PRs in the current codebase.                            |
 | 7   | `codex "Look for vulnerabilities and create a security review report"`          | Finds and explains security bugs.                                          |
 
+### Collaborating through branches
+
+To share Codex-generated edits with teammates, follow the contribution workflow that already exists in [`docs/contributing.md`](./contributing.md#development-workflow). In short:
+
+1. Start from an up-to-date `main` branch.
+2. Create a **topic branch** (for example, `feat/interactive-prompt`).
+3. Stage and commit your work.
+4. Push the branch and open a PR.
+
+Here's the exact set of commands we typically run in this repository:
+
+```shell
+git checkout main
+git pull origin main
+
+git checkout -b feat/mi-cambio
+
+git status           # optional: review what changed
+git add <files>
+git commit -m "Describe the change"
+
+git push -u origin feat/mi-cambio
+```
+
+Refer back to the contributing guide for expectations around testing, PR templates, and keeping your branch up to date with `main`.
+
 ### Memory with AGENTS.md
 
 You can give Codex extra instructions and guidance using `AGENTS.md` files. Codex looks for `AGENTS.md` files in the following places, and merges them top-down:
