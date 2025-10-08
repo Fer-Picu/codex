@@ -39,7 +39,6 @@ CLAUDE.md
 .nyc_output/
 .jest/
 *.tsbuildinfo
-sdk/typescript/v8-compile-cache-*/
 
 # logs
 *.log

@@ -59,28 +59,31 @@ Below are a few bite-size examples you can copy-paste. Replace the text in quote
 | 6   | `codex "Carefully review this repo, and propose 3 high impact well-scoped PRs"` | Suggests impactful PRs in the current codebase.                            |
 | 7   | `codex "Look for vulnerabilities and create a security review report"`          | Finds and explains security bugs.                                          |
 
-### Creating a branch and pushing changes
+### Collaborating through branches
 
-When you are ready to share Codex-generated edits, create a topic branch and push it to your remote. The example below starts from `main`, creates a new branch, commits some work, and publishes it so collaborators can pick it up:
+To share Codex-generated edits with teammates, follow the contribution workflow that already exists in [`docs/contributing.md`](./contributing.md#development-workflow). In short:
+
+1. Start from an up-to-date `main` branch.
+2. Create a **topic branch** (for example, `feat/interactive-prompt`).
+3. Stage and commit your work.
+4. Push the branch and open a PR.
+
+Here's the exact set of commands we typically run in this repository:
 
 ```shell
-# Confirm you are starting from an up-to-date default branch
 git checkout main
 git pull origin main
 
-# Create and switch to a dedicated feature branch
-git checkout -b feature/informe-nuevo
+git checkout -b feat/mi-cambio
 
-# Make your edits, then stage and commit them
-git status        # optional: review staged vs unstaged files
-git add docs/getting-started.md
-git commit -m "Describe el flujo para crear y pushear una rama"
+git status           # optional: review what changed
+git add <files>
+git commit -m "Describe the change"
 
-# Push the branch so others can work from it
-git push -u origin feature/informe-nuevo
+git push -u origin feat/mi-cambio
 ```
 
-After running the last command, the remote branch `feature/informe-nuevo` will exist on your Git provider. You (or a teammate) can now open a pull request from that branch or continue collaborating by fetching and checking it out.
+Refer back to the contributing guide for expectations around testing, PR templates, and keeping your branch up to date with `main`.
 
 ### Memory with AGENTS.md
 
